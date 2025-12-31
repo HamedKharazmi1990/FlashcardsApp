@@ -33,6 +33,10 @@ struct TextAndOptionalImageView: View {
             }
         }
         .padding()
+        .rotation3DEffect(
+            rotate ? .degrees(180) : .zero,
+            axis: (x: 0.0, y: 1.0, z: 0.0)
+        )
     }
 }
 
