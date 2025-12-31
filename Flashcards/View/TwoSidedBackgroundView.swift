@@ -28,7 +28,7 @@ struct TwoSidedBackgroundView: View {
     TwoSidedBackgroundView(
         frontColor: .blue,
         backColor: .red,
-        opacity: 0.1,
+        opacity: 0.3,
         isFrontUp: true
     )
 }
