@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct QuestionModel: Identifiable {
     let id = UUID()
     let question: String
-    let questionImageName: String?
+    let questionImageName: ImageResource?
     let answer: String
-    let answerImageName: String?
+    let answerImageName: ImageResource?
 }
