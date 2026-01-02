@@ -12,11 +12,18 @@ struct TextAndOptionalImageView: View {
     let imageName: ImageResource?
     let rotate: Bool
     
+    var titleFont: Font {
+        UIDevice.isIPad ? .largeTitle : .title2
+    }
+    var imageWidthScale: CGFloat {
+        UIDevice.isIPad ? 0.75 : 1.0
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Text(.init(text))
-                    .font(.title2)
+                    .font(titleFont)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding()
@@ -26,7 +33,7 @@ struct TextAndOptionalImageView: View {
                     Image(imageName)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: geometry.size.width)
+                        .frame(width: geometry.size.width * imageWidthScale)
                         .frame(maxHeight: geometry.size.height * 0.7)
                         .clipShape(.rect(cornerRadius: 10))
                 }

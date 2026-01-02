@@ -32,6 +32,7 @@ struct QuestionsView: View {
                         dismiss()
                     }
                 )
+                .padding()
                 
                 // Pile of cards
                 ZStack {
@@ -52,6 +53,7 @@ struct QuestionsView: View {
                         .opacity(index == questionModels.count-1 ? 1 : 0)
                     }
                 }
+                .padding(.horizontal, UIDevice.isIPad ? nil : 0)
             }
         }
     }
