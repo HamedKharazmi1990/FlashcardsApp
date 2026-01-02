@@ -23,7 +23,7 @@ struct HeaderView: View {
     }
     
     var numQuestionsText: String {
-        "\(questionNumber) out of \(numberOfQuestions)"
+        "\(questionNumber + 1) out of \(numberOfQuestions)"
     }
     
     var topicFont: Font {

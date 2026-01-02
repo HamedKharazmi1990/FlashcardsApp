@@ -21,7 +21,7 @@ struct FillBarView: View {
                 // Background
                 RoundedRectangle(cornerRadius: 10)
                     .fill(colorBG.opacity(opacity))
-                    .frame(width: .infinity, height: barWidth)
+                    .frame(width: geometry.size.width, height: barWidth)
                 
                 ZStack {
                     // The foreground bar
