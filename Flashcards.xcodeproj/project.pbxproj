@@ -16,6 +16,11 @@
 			path = Flashcards;
 			sourceTree = "<group>";
 		};
+		23A54D932F083DF50017D9E1 /* assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = assets;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 		23A54D3E2F04604D0017D9E1 = {
 			isa = PBXGroup;
 			children = (
+				23A54D932F083DF50017D9E1 /* assets */,
 				23A54D492F04604D0017D9E1 /* Flashcards */,
 				23A54D482F04604D0017D9E1 /* Products */,
 			);
@@ -62,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				23A54D492F04604D0017D9E1 /* Flashcards */,
+				23A54D932F083DF50017D9E1 /* assets */,
 			);
 			name = Flashcards;
 			packageProductDependencies = (
