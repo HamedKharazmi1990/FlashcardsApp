@@ -30,6 +30,36 @@ struct CardView: View {
     let cornerRadius = 10.0
     let lowerRectangleHeight = 80.0
     
+    // Gestures
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged{ gesture in
+                //
+                offset = gesture.translation
+            }
+            .onEnded{ _ in
+                //
+                if abs(offset.width) > 100 {
+                    removeCard()
+                } else {
+                    offset = .zero
+                }
+            }
+    }
+    var magnify: some Gesture {
+        MagnifyGesture()
+            .onChanged { scale in
+                withAnimation {
+                    scaleFactor = scale.magnification
+                }
+            }
+            .onEnded { _ in
+                withAnimation {
+                    scaleFactor = 1.0
+                }
+            }
+    }
+    
     var body: some View {
         ZStack {
             TwoSidedBackgroundView(
@@ -47,6 +77,7 @@ struct CardView: View {
                     imageName: currentImageName,
                     rotate: rotate
                 )
+                .scaleEffect(scaleFactor)
                 
                 Spacer()
                 
@@ -70,6 +101,18 @@ struct CardView: View {
         )
         .clipShape(.rect(cornerRadius: cornerRadius))
         .padding()
+        .offset(x: offset.width * 2, y: offset.height * 0.4)
+        .gesture(
+            drag
+        )
+        .gesture(
+            magnify
+        )
+        .onTapGesture {
+            withAnimation {
+                rotate.toggle()
+            }
+        }
     }
 }
 
